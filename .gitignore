@@ -1,0 +1,7 @@
+# Zugangsdaten – gehören NIE ins Repo (das Repo ist öffentlich).
+# Die echte Datei liegt auf dem Server eine Ebene über public_html.
+kontakt-config.php
+
+# Systemdateien
+.DS_Store
+Thumbs.db

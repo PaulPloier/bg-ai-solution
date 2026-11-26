@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BG AI Solutions – KI-Chatbot für Ihre Website | 24/7 Kundenanfragen beantworten</title>
+  <meta name="description" content="Ein individuell trainierter KI-Chatbot beantwortet die Fragen Ihrer Website-Besucher, erfasst qualifizierte Anfragen und arbeitet rund um die Uhr. Einrichtung in 3–7 Werktagen.">
+  <link rel="stylesheet" href="fonts/fonts.css?v=1">
+  <!-- Versionsparameter bei jeder Änderung erhöhen, damit Browser nicht
+       eine alte Fassung aus dem Cache ausliefern. -->
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">BG<span>&nbsp;AI Solutions</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#loesung">Lösung</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#faq">FAQ</a>
+        <button class="btn btn--primary btn--nav-mobile" data-open-booking>Erstgespräch buchen</button>
+      </nav>
+      <button class="btn btn--primary nav__cta" data-open-booking>Erstgespräch buchen</button>
+      <button class="nav__burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__card reveal">
+          <div class="hero__content">
+            <span class="hero__badge"><span class="status-dot"></span>KI-Chatbot für Ihre Website</span>
+            <h1 class="hero__headline">
+              Ihre Website beantwortet jetzt Fragen. <em>Rund um die Uhr.</em>
+            </h1>
+            <p class="hero__sub">
+              Ein individuell trainierter KI-Chatbot beantwortet die Fragen Ihrer Website-Besucher,
+              erfasst qualifizierte Anfragen und arbeitet rund um die Uhr – auch wenn Ihr Team gerade nicht erreichbar ist.
+            </p>
+            <div class="hero__actions">
+              <button class="btn btn--primary btn--lg" data-open-booking>Erstgespräch buchen</button>
+              <a href="#loesung" class="btn btn--ghost btn--lg">So funktioniert's</a>
+            </div>
+            <ul class="hero__facts">
+              <li>24/7 verfügbar</li>
+              <li>Live in 3–7 Werktagen</li>
+              <li>Keine Technikkenntnisse nötig</li>
+            </ul>
+          </div>
+          <div class="hero__media">
+            <div class="hero__panel">
+              <span class="hero__chip"><span class="status-dot"></span>24/7 online</span>
+              <div class="hero__chatcard">
+                <div class="chatcard__head">
+                  <span class="status-dot"></span>
+                  <div>
+                    <strong>BG&nbsp;Assistent</strong>
+                    <small>Online · antwortet sofort</small>
+                  </div>
+                </div>
+                <div class="hero__thread" id="heroThread">
+                  <div class="bubble bubble--user hero-msg">Wie kann ich einen Termin vereinbaren?</div>
+                  <div class="hero__ai-slot">
+                    <div class="bubble bubble--ai typing hero-typing" aria-hidden="true"><i></i><i></i><i></i></div>
+                    <div class="bubble bubble--ai hero-msg">Direkt hier im Chat: Ich notiere kurz Ihren Namen und Ihre E-Mail – Ihr Ansprechpartner meldet sich dann mit einem Terminvorschlag.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="leadcard leadcard--float hero-msg">
+                <div class="leadcard__title">Lead erfasst <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="leadcard__rows">
+                  <span>Name</span><span>Unternehmen</span><span>E-Mail</span><span>Interesse</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. TRUST BAR ============ -->
+    <section class="trust">
+      <div class="container">
+        <p class="trust__caption reveal">Warum BG AI Solutions</p>
+        <ul class="trust__row reveal">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <strong>24/7 verfügbar</strong>
+            <small>Auch nach Feierabend</small>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <strong>Individuell trainiert</strong>
+            <small>Auf Ihr Unternehmen</small>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.5"/></svg>
+            <strong>In Ihre Website integriert</strong>
+            <small>Ohne Umbau</small>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <strong>Live in 3–7 Werktagen</strong>
+            <small>Inklusive Funktionstest</small>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+            <strong>Ohne Technikkenntnisse</strong>
+            <small>Wir übernehmen alles</small>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 3. PROBLEM ============ -->
+    <section class="problem">
+      <div class="container">
+        <h2 class="problem__headline reveal">Wie viele Anfragen gehen verloren,<br>während niemand antwortet?</h2>
+        <div class="problem__cards">
+          <article class="problem__card reveal">
+            <span class="problem__time">18:47 · Abends</span>
+            <p>Ein potenzieller Kunde besucht Ihre Website. Er hat eine Frage. Niemand antwortet. <strong>Er geht.</strong></p>
+          </article>
+          <article class="problem__card reveal" style="--delay:.1s">
+            <span class="problem__time">Samstag · Wochenende</span>
+            <p>Ein Interessent sucht Informationen. Das Unternehmen ist nicht erreichbar. Die Anfrage wird verschoben – <strong>oder vergessen.</strong></p>
+          </article>
+          <article class="problem__card reveal" style="--delay:.2s">
+            <span class="problem__time">Dienstag 11:30 · Tagesgeschäft</span>
+            <p>Das Team arbeitet. Telefon, E-Mails, Kunden warten. Immer wieder <strong>dieselben Fragen.</strong></p>
+          </article>
+        </div>
+        <p class="problem__transition reveal">
+          Genau hier kommt BG AI Solutions ins Spiel.
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 4. LÖSUNG ============ -->
+    <section class="solution" id="loesung">
+      <div class="container solution__inner">
+        <div class="solution__visual reveal">
+          <div class="chatcard">
+            <div class="chatcard__head">
+              <span class="status-dot"></span>
+              <div><strong>BG Assistent</strong><small>Online · antwortet sofort</small></div>
+            </div>
+            <div class="chatcard__thread">
+              <div class="bubble bubble--user">Bieten Sie auch Wartung nach dem Go-Live an?</div>
+              <div class="bubble bubble--ai">Ja – Hosting, Wartung und laufende Betreuung sind Teil unserer monatlichen Pakete. Soll ich Ihnen die Details zeigen?</div>
+              <div class="bubble bubble--user">Gerne. Und können Sie mir ein Angebot schicken?</div>
+              <div class="bubble bubble--ai">Sehr gerne! Darf ich dafür kurz Ihren Namen und Ihre E-Mail-Adresse notieren?</div>
+            </div>
+          </div>
+        </div>
+        <div class="solution__text">
+          <p class="eyebrow reveal">Die Lösung</p>
+          <h2 class="reveal">Ihre Website bekommt einen digitalen Mitarbeiter.</h2>
+          <p class="section-sub reveal">
+            Er kennt Ihr Unternehmen, Ihre Leistungen und Ihre Produkte. Er führt Besucher durch Informationen,
+            beantwortet Fragen und ist rund um die Uhr für Ihre Besucher da.
+          </p>
+          <ul class="checklist reveal">
+            <li>Beantwortet Fragen sofort</li>
+            <li>Kennt Ihre Leistungen und Services</li>
+            <li>Erfasst Kontaktdaten</li>
+            <li>Qualifiziert Interessenten und leitet Anfragen weiter</li>
+          </ul>
+          <a href="#flow" class="textlink reveal">So funktioniert's <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. ANFRAGE-FLOW ============ -->
+    <section class="flow" id="flow">
+      <div class="container">
+        <h2 class="text-center reveal">Was passiert bei einer Anfrage?</h2>
+        <p class="section-sub text-center reveal">Vom ersten Klick bis zur qualifizierten Anfrage – automatisch.</p>
+        <div class="flow__steps">
+          <article class="flow__step reveal">
+            <span class="flow__num">01</span>
+            <h3>Besucher fragt</h3>
+            <p>Ein potenzieller Kunde hat eine Frage zu Ihrem Angebot.</p>
+          </article>
+          <article class="flow__step reveal" style="--delay:.08s">
+            <span class="flow__num">02</span>
+            <h3>KI antwortet sofort</h3>
+            <p>Der Chatbot liefert eine passende Antwort auf Basis Ihrer Unternehmensinformationen.</p>
+          </article>
+          <article class="flow__step reveal" style="--delay:.16s">
+            <span class="flow__num">03</span>
+            <h3>Interesse wird erkannt</h3>
+            <p>Der Chatbot erkennt, ob aus dem Gespräch ein echter Lead entstehen kann.</p>
+          </article>
+          <article class="flow__step reveal" style="--delay:.24s">
+            <span class="flow__num">04</span>
+            <h3>Anfrage wird übergeben</h3>
+            <p>Kontaktdaten und relevante Informationen gehen direkt an Ihr Team.</p>
+          </article>
+        </div>
+        <p class="flow__caption reveal">Ihr Team muss nicht jede Anfrage selbst bearbeiten.</p>
+      </div>
+    </section>
+
+    <!-- Interaktive Chatbot-Demo folgt, sobald der Bot eingebaut ist. -->
+
+    <!-- ============ 6. BENEFITS (BENTO) ============ -->
+    <section class="benefits" id="vorteile">
+      <div class="container">
+        <h2 class="reveal">Was Ihr Unternehmen davon hat.</h2>
+        <p class="section-sub reveal">Nutzen statt Features.</p>
+        <div class="bento">
+          <article class="bento__tile bento__tile--big reveal">
+            <span class="bento__giant">24/7</span>
+            <h3>Immer erreichbar</h3>
+            <p>Auch außerhalb der Geschäftszeiten bleibt Ihre Website aktiv – abends, am Wochenende, an Feiertagen.</p>
+          </article>
+          <article class="bento__tile reveal" style="--delay:.05s">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 4-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Mehr Anfragen</h3>
+            <p>Jeder Besucher kann sofort eine Antwort bekommen – statt die Seite zu verlassen.</p>
+          </article>
+          <article class="bento__tile reveal" style="--delay:.1s">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 12h10M7 8h10M7 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/></svg>
+            <h3>Weniger Routinefragen</h3>
+            <p>Ihr Team beantwortet nicht mehr immer wieder dieselben Fragen.</p>
+          </article>
+          <article class="bento__tile reveal" style="--delay:.15s">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <h3>Schnellere Reaktion</h3>
+            <p>Interessenten warten nicht auf eine E-Mail oder einen Rückruf.</p>
+          </article>
+          <article class="bento__tile reveal" style="--delay:.2s">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M16 8l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Qualifizierte Leads</h3>
+            <p>Kontaktdaten und relevante Informationen werden strukturiert erfasst.</p>
+          </article>
+          <article class="bento__tile reveal" style="--delay:.25s">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1m0-12.8l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <h3>Individuell für Sie</h3>
+            <p>Der Chatbot basiert auf Ihren Informationen und Ihrer Unternehmenslogik.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. USE CASES ============ -->
+    <section class="usecases">
+      <div class="container">
+        <h2 class="reveal">Für wen ist das?</h2>
+        <p class="section-sub reveal">Branchenübergreifend – überall dort, wo Kundenfragen ankommen.</p>
+        <div class="usecases__grid">
+          <article class="usecase reveal">
+            <div class="usecase__visual">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a4 4 0 00-5.4 5.4l-5 5a1.5 1.5 0 002.1 2.1l5-5a4 4 0 005.4-5.4l-2.4 2.4-2.1-2.1 2.4-2.4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Dienstleister</h3>
+            <p>Viele Fragen zu Leistungen, Preisen und Ablauf – sofort beantwortet.</p>
+          </article>
+          <article class="usecase reveal" style="--delay:.07s">
+            <div class="usecase__visual">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M21 12a9 9 0 11-4-7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Beratung</h3>
+            <p>Interessenten verstehen früh, ob Ihre Dienstleistung zu ihnen passt.</p>
+          </article>
+          <article class="usecase reveal" style="--delay:.14s">
+            <div class="usecase__visual">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 10l1-5h14l1 5M5 10v9h14v-9M9 19v-5h6v5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Lokale Unternehmen</h3>
+            <p>Öffnungszeiten, Leistungen, Termine und Informationen – ohne Warteschleife.</p>
+          </article>
+          <article class="usecase reveal" style="--delay:.21s">
+            <div class="usecase__visual">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 010 18M12 3a15 15 0 000 18" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Viel Website-Traffic</h3>
+            <p>Viele Besucher, aber zu wenige Anfragen? Der Chatbot macht daraus Gespräche.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. ROI ============ -->
+    <section class="roi">
+      <div class="container">
+        <h2 class="reveal">Eine Vertriebsinvestition.<br>Keine Spielerei.</h2>
+        <p class="roi__sub reveal">
+          Wenn durch den Chatbot nur wenige zusätzliche qualifizierte Anfragen entstehen und daraus Kunden werden,
+          kann sich die Investition bereits amortisieren.
+        </p>
+        <div class="roi__funnel reveal">
+          <div class="roi__stage">
+            <span class="roi__num" data-count="100">0</span>
+            <span class="roi__label">Website-Besucher</span>
+          </div>
+          <span class="roi__arrow">→</span>
+          <div class="roi__stage">
+            <span class="roi__num" data-count="8">0</span>
+            <span class="roi__label">Gespräche</span>
+          </div>
+          <span class="roi__arrow">→</span>
+          <div class="roi__stage">
+            <span class="roi__num" data-count="3">0</span>
+            <span class="roi__label">Qualifizierte Leads</span>
+          </div>
+          <span class="roi__arrow">→</span>
+          <div class="roi__stage">
+            <span class="roi__num roi__num--accent" data-count="1">0</span>
+            <span class="roi__label">Neuer Kunde</span>
+          </div>
+        </div>
+        <p class="roi__disclaimer reveal">Beispielhafte Illustration – keine Ergebnisgarantie.</p>
+        <button class="btn btn--ghost-light reveal" data-open-booking>Erstgespräch buchen</button>
+      </div>
+    </section>
+
+    <!-- ============ 9. ABLAUF ============ -->
+    <section class="process" id="ablauf">
+      <div class="container process__inner">
+        <div class="process__text">
+          <p class="eyebrow reveal">Ablauf</p>
+          <h2 class="reveal">In vier Schritten live.</h2>
+          <p class="section-sub reveal">
+            Sie brauchen keine technischen Kenntnisse.
+            Wir übernehmen die komplette Einrichtung.
+          </p>
+          <button class="btn btn--primary reveal" data-open-booking>Erstgespräch buchen</button>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <span class="timeline__num">01</span>
+            <div>
+              <h3>Erstgespräch</h3>
+              <p>Wir verstehen Ihr Unternehmen, Ihre Website und Ihre häufigsten Kundenfragen.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" style="--delay:.07s">
+            <span class="timeline__num">02</span>
+            <div>
+              <h3>Einrichtung</h3>
+              <p>Wir erstellen die Wissensbasis und konfigurieren den KI-Chatbot.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" style="--delay:.14s">
+            <span class="timeline__num">03</span>
+            <div>
+              <h3>Integration</h3>
+              <p>Der Chatbot wird direkt in Ihre bestehende Website integriert.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" style="--delay:.21s">
+            <span class="timeline__num">04</span>
+            <div>
+              <h3>Go-Live <span class="tag">in 3–7 Werktagen</span></h3>
+              <p>Nach Funktionstest und Optimierung geht der Chatbot live.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 10. ANGEBOT ============ -->
+    <section class="pricing" id="angebot">
+      <div class="container">
+        <h2 class="text-center reveal">Was kostet ein KI-Chatbot?</h2>
+        <p class="section-sub text-center reveal">
+          Das hängt davon ab, wie umfangreich Ihre Wissensbasis ist und was Ihr Chatbot
+          können soll. Statt Pauschalpakete zu verkaufen, klären wir den Umfang im
+          Erstgespräch – danach erhalten Sie ein festes Angebot.
+        </p>
+        <div class="offer">
+          <article class="offer__card reveal">
+            <span class="offer__label">In jedem Projekt enthalten</span>
+            <ul class="checklist">
+              <li>Individuelle Einrichtung Ihres Chatbots</li>
+              <li>Eigene Wissensbasis aus Ihren Inhalten</li>
+              <li>Integration in Ihre bestehende Website</li>
+              <li>Funktionstest und Go-Live</li>
+              <li>Laufendes Hosting und Wartung</li>
+              <li>Persönliche Betreuung und Optimierung</li>
+            </ul>
+          </article>
+          <article class="offer__card offer__card--path reveal" style="--delay:.08s">
+            <span class="offer__label">So kommen Sie zum Angebot</span>
+            <ol class="offer__steps">
+              <li>
+                <span class="offer__num">01</span>
+                <div>
+                  <h3>Erstgespräch</h3>
+                  <p>Wir sehen uns Ihre Website und Ihre häufigsten Kundenfragen an.</p>
+                </div>
+              </li>
+              <li>
+                <span class="offer__num">02</span>
+                <div>
+                  <h3>Umfang festlegen</h3>
+                  <p>Gemeinsam definieren wir, was Ihr Chatbot können soll.</p>
+                </div>
+              </li>
+              <li>
+                <span class="offer__num">03</span>
+                <div>
+                  <h3>Festes Angebot</h3>
+                  <p>Sie erhalten ein transparentes Angebot – mit klarem Preis, ohne Überraschungen.</p>
+                </div>
+              </li>
+            </ol>
+            <button class="btn btn--primary btn--block btn--lg" data-open-booking>Erstgespräch buchen</button>
+            <p class="offer__note">Unverbindlich – Sie entscheiden danach in Ruhe.</p>
+          </article>
+        </div>
+        <p class="pricing__footnote reveal">
+          Einmalige Einrichtung plus monatliche Betreuung · Preise zzgl. gesetzlicher MwSt. · Mindestvertragslaufzeit 12 Monate
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 11. FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="container faq__inner">
+        <div class="faq__text">
+          <h2 class="reveal">Häufige Fragen.</h2>
+          <p class="section-sub reveal">Noch etwas offen? Wir beantworten alles im Gespräch.</p>
+          <button class="textlink reveal" data-open-booking>Erstgespräch buchen <span>→</span></button>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item reveal" open>
+            <summary>Brauche ich technische Kenntnisse?</summary>
+            <p>Nein. Die komplette Einrichtung und Integration wird von uns übernommen – von der Wissensbasis bis zum Go-Live.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Warum stehen keine Preise auf der Website?</summary>
+            <p>Weil der Aufwand je nach Projekt unterschiedlich ist – eine kompakte Wissensbasis lässt sich anders kalkulieren als ein Chatbot für ein breites Leistungsspektrum. Im Erstgespräch klären wir den Umfang und Sie erhalten ein festes Angebot: einmalige Einrichtung plus eine monatliche Pauschale für Hosting, Wartung und Betreuung.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Versteht der Chatbot mein Unternehmen wirklich?</summary>
+            <p>Ja. Die Wissensbasis wird individuell auf Ihr Unternehmen, Ihre Leistungen und Ihre häufigsten Kundenfragen abgestimmt.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Funktioniert das mit meiner Website?</summary>
+            <p>Der Chatbot kann in die meisten modernen Websites integriert werden – unabhängig vom System, mit dem Ihre Website gebaut wurde.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Was passiert, wenn der Chatbot etwas nicht weiß?</summary>
+            <p>Der Chatbot erfindet keine Antworten. Bei unbekannten Fragen verweist er auf ein persönliches Gespräch und kann die Anfrage an einen Menschen weiterleiten.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Wie schnell können wir starten?</summary>
+            <p>Die Einrichtung dauert typischerweise 3–7 Werktage – vom Erstgespräch bis zum Go-Live auf Ihrer Website.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Kann der Chatbot Leads erfassen?</summary>
+            <p>Ja. Kontaktdaten und relevante Informationen können erfasst, vorqualifiziert und direkt an Ihr Team weitergeleitet werden.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 12. FINAL CTA ============ -->
+    <section class="final">
+      <div class="container">
+        <h2 class="final__headline reveal">
+          Ihre Website arbeitet bereits für Sie.<br>
+          Warum beantwortet sie nicht auch Kundenfragen?
+        </h2>
+        <p class="final__sub reveal">
+          Buchen Sie ein unverbindliches Gespräch – wir zeigen Ihnen,
+          wie ein KI-Chatbot auf Ihrer Website eingesetzt werden kann.
+        </p>
+        <div class="final__actions reveal">
+          <button class="btn btn--primary btn--lg" data-open-booking>Erstgespräch buchen</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">BG<span>&nbsp;AI Solutions</span></span>
+        <p>KI-Lösungen, die aus Websites bessere Kundenerlebnisse machen.</p>
+      </div>
+      <div class="footer__meta">
+        <span>Bilal Gulakhmedov · Moosleitenweg 2, 4320 Perg, Österreich</span>
+        <span>
+          <a href="mailto:office@bgaisolution.com">office@bgaisolution.com</a> ·
+          <a href="tel:+436764354373">+43 676 4354373</a>
+        </span>
+        <nav>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY MOBILE CTA ============ -->
+  <div class="sticky-cta" id="stickyCta">
+    <button class="btn btn--primary btn--block" data-open-booking>Erstgespräch buchen</button>
+  </div>
+
+  <!-- ============ BOOKING MODAL ============ -->
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-booking></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close-booking aria-label="Schließen">×</button>
+      <div class="modal__body" id="modalBody">
+        <p class="eyebrow">Unverbindliches Gespräch</p>
+        <h3 id="modalTitle">Lernen wir uns kennen.</h3>
+        <p class="modal__sub">Kurz, unverbindlich und ohne technische Vorkenntnisse. Wir melden uns mit einem Terminvorschlag.</p>
+        <!--
+          INTEGRATION: Sobald ein Buchungstool (z. B. Calendly) vorhanden ist,
+          hier das Embed einsetzen und das Formular darunter entfernen.
+        -->
+        <form id="bookingForm" class="modal__form" action="kontakt.php" method="post" novalidate>
+          <label>Name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Unternehmen<input type="text" name="company" required autocomplete="organization"></label>
+          <label>E-Mail<input type="email" name="email" required autocomplete="email"></label>
+          <label>Website <small>(optional)</small><input type="url" name="website" placeholder="https://" autocomplete="url"></label>
+          <label>Ihre Frage <small>(optional)</small><textarea name="message" rows="2"></textarea></label>
+          <!-- Honeypot: für Menschen unsichtbar, Bots füllen es aus. Nicht entfernen. -->
+          <div class="modal__trap" aria-hidden="true">
+            <label>Fax<input type="text" name="fax" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <p class="modal__error" id="formError" role="alert" hidden></p>
+          <button type="submit" class="btn btn--primary btn--block btn--lg" id="formSubmit">Erstgespräch anfragen</button>
+          <p class="modal__hint">Keine Verpflichtung. Keine Weitergabe Ihrer Daten.</p>
+        </form>
+      </div>
+      <div class="modal__success" id="modalSuccess" hidden>
+        <div class="modal__success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Danke für Ihre Anfrage!</h3>
+        <p>Wir melden uns zeitnah mit einem Terminvorschlag bei Ihnen.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=2"></script>
+  <!-- Chatbase – externer KI-Chatbot. Lädt von www.chatbase.co und überträgt
+       dabei Daten an Chatbase, Inc. (USA). Siehe Abschnitt 7 der
+       Datenschutzerklärung – bei Änderungen am Bot dort nachziehen. -->
+  <script>
+  (function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+      window.chatbase = (...arguments) => {
+        if(!window.chatbase.q){ window.chatbase.q = [] }
+        window.chatbase.q.push(arguments)
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop){
+          if(prop === "q"){ return target.q }
+          return (...args) => target(prop, ...args)
+        }
+      })
+    }
+    const onLoad = function(){
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "YxVCcPgkwER0KJAa1RwSX";
+      script.domain = "www.chatbase.co";
+      document.body.appendChild(script)
+    };
+    if(document.readyState === "complete"){ onLoad() }
+    else { window.addEventListener("load", onLoad) }
+  })();
+  </script>
+
+</body>
+</html>
