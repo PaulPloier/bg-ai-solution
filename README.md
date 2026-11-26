@@ -18,18 +18,13 @@ Statisches HTML/CSS/JS ohne Build-Schritt, dazu ein PHP-Skript für das Kontaktf
 
 Der Inhalt dieses Repos entspricht 1:1 dem Ordner `public_html` auf dem Server.
 
-## Kontaktformular einrichten
+## Kontaktformular
 
-`kontakt.php` braucht die Zugangsdaten des Postfachs. Diese liegen in einer eigenen Datei
-**eine Ebene über `public_html`** – also außerhalb des Repos und nicht über das Web erreichbar:
+`kontakt.php` verschickt Anfragen an office@bgaisolution.com – **ohne Einrichtung** über PHP `mail()`.
 
-```
-domains/bgaisolution.com/
-├── kontakt-config.php   ← Zugangsdaten, NICHT im Repo
-└── public_html/         ← Inhalt dieses Repos
-```
-
-Inhalt von `kontakt-config.php`:
+Optional kann auf SMTP umgestellt werden (falls Mails einmal im Spam landen): dazu eine Datei
+`kontakt-config.php` **eine Ebene über `public_html`** anlegen – außerhalb des Repos und nicht
+über das Web erreichbar. Sobald dort ein Passwort eingetragen ist, nutzt das Formular automatisch SMTP.
 
 ```php
 <?php
@@ -46,9 +41,6 @@ return [
 ];
 ```
 
-Fehlt die Datei oder steht noch ein Platzhalter darin, zeigt das Formular eine Fehlermeldung
-mit direkter Mailadresse an, statt einen Versand vorzutäuschen.
-
 ## Deployment
 
 Hostinger kann direkt aus diesem Repo deployen: hPanel → Website → **Erweitert → Git**.
@@ -57,5 +49,5 @@ lassen (= `public_html`). Mit aktiviertem Auto-Deployment geht jeder Push auf `m
 
 ## Vor dem Livegang noch offen
 
-- Impressum: Gewerbewortlaut, Gewerbebehörde und WKO-Fachgruppe (nach der Gewerbeanmeldung)
+- Impressum: Block „Gewerberechtliche Angaben“ (liegt als Kommentar bereit) nach der Gewerbeanmeldung einsetzen
 - Datenschutz, Abschnitt 7: Grundlage der US-Übermittlung, Speicherdauer und Trainingsnutzung bei Chatbase

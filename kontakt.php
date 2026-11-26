@@ -1,14 +1,13 @@
 <?php
 /**
- * Nimmt die Anfragen des Kontaktformulars entgegen und verschickt sie per SMTP.
+ * Nimmt die Anfragen des Kontaktformulars entgegen und verschickt sie per E-Mail
+ * an office@bgaisolution.com.
  *
- * Warum SMTP statt mail(): mail() verschickt auf Hostinger über den Webserver.
- * Dessen IP ist im SPF-Eintrag der Domain nicht freigegeben und die Mail wird
- * nicht DKIM-signiert – der Posteingang lehnt sie ab oder sortiert sie still
- * in den Spam, obwohl mail() "Erfolg" meldet. Per SMTP läuft die Mail über
- * den echten Mailserver und kommt zuverlässig an.
- *
- * Zugangsdaten stehen in kontakt-config.php EINE EBENE ÜBER public_html.
+ * Versandweg:
+ *  - Standard: PHP mail() über den Hostinger-Server – funktioniert ohne Einrichtung.
+ *  - Optional: Liegt eine kontakt-config.php mit Postfach-Passwort EINE EBENE ÜBER
+ *    public_html, wird stattdessen per SMTP verschickt (noch zuverlässiger, falls
+ *    Mails einmal im Spam landen). Vorlage siehe README.
  */
 
 define('KONTAKT_CONFIG', true);
@@ -134,15 +133,22 @@ if (feld('fax') !== '') {
     antwort(200, ['ok' => true]);
 }
 
+// Standardwerte – greifen, wenn keine kontakt-config.php vorhanden ist.
+$cfg = [
+    'from'      => 'office@bgaisolution.com',
+    'from_name' => 'BG AI Solutions Website',
+    'to'        => 'office@bgaisolution.com',
+];
+$smtp = false;
+
 $configPfad = dirname(__DIR__) . '/kontakt-config.php';
-if (!is_file($configPfad)) {
-    error_log('Kontaktformular: kontakt-config.php fehlt unter ' . $configPfad);
-    antwort(500, ['ok' => false, 'error' => 'Formular ist nicht konfiguriert.']);
-}
-$cfg = require $configPfad;
-if (!is_array($cfg) || ($cfg['smtp_pass'] ?? '') === '' || strpos($cfg['smtp_pass'], 'HIER_') === 0) {
-    error_log('Kontaktformular: SMTP-Passwort in kontakt-config.php nicht eingetragen.');
-    antwort(500, ['ok' => false, 'error' => 'Formular ist nicht konfiguriert.']);
+if (is_file($configPfad)) {
+    $geladen = require $configPfad;
+    $pass = is_array($geladen) ? ($geladen['smtp_pass'] ?? '') : '';
+    if ($pass !== '' && strpos($pass, 'HIER_') !== 0) {
+        $cfg  = array_merge($cfg, $geladen);
+        $smtp = true;
+    }
 }
 
 $name      = feld('name', 120);
@@ -202,7 +208,22 @@ $kopf = implode("\r\n", [
 $nachrichtRoh = $kopf . "\r\n\r\n" . rtrim(chunk_split(base64_encode($text), 76, "\r\n"));
 
 try {
-    smtp_senden($cfg, $von, $an, $nachrichtRoh);
+    if ($smtp) {
+        smtp_senden($cfg, $von, $an, $nachrichtRoh);
+    } else {
+        // mail() bekommt Empfänger und Betreff separat, daher aus dem Kopf entfernen.
+        $kopfMail = preg_replace('/^(To|Subject): .*\r\n/m', '', $kopf . "\r\n");
+        $ok = mail(
+            $an,
+            kodiert(sprintf('Neue Anfrage von %s (%s)', $name, $firma)),
+            rtrim(chunk_split(base64_encode($text), 76, "\r\n")),
+            rtrim($kopfMail),
+            '-f' . $von      // Envelope-Absender = eigene Domain (SPF)
+        );
+        if (!$ok) {
+            throw new RuntimeException('mail() hat den Versand abgelehnt.');
+        }
+    }
 } catch (Throwable $e) {
     error_log('Kontaktformular: ' . $e->getMessage());
     antwort(500, ['ok' => false, 'error' => 'Die Nachricht konnte nicht versendet werden.']);
